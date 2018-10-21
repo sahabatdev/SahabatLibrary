@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -42,12 +43,16 @@ public class BaseActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void showDialog(){
+    public void showProgressDialog(){
         pDialog.show();
     }
 
-    public void hideDialog(){
+    public void hideProgressDialog(){
         pDialog.hide();
+    }
+
+    public void toastMessage(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     protected void replaceFragment(@IdRes int containerViewId,
