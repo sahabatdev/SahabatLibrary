@@ -6,4 +6,6 @@ package site.sahabatdeveloper.sahabatlibrary.base;
 
 public interface BaseView {
     public void onMessage(String message);
+    public void onShowProgressDialog();
+    public void onHideProgressDialog();
 }
