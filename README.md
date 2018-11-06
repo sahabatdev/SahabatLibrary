@@ -1,6 +1,42 @@
 # SahabatLibrary
 Library For Sahabat Framework
 
+# DOWNLOAD
+Download the latest JAR or grab via Jitpack:
+### Add the JitPack repository to your build file
+```
+<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+### Add the dependency
+```
+<dependency>
+	    <groupId>com.github.sahabatdev</groupId>
+	    <artifactId>SahabatLibrary</artifactId>
+	    <version>0.0.8</version>
+	</dependency>
+```
+or Gradle:
+### Add it in your root build.gradle at the end of repositories
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+### Add the dependency
+```
+dependencies {
+	        implementation 'com.github.sahabatdev:SahabatLibrary:0.0.8'
+	}
+```
+
 # LICENSE
 ```
 MIT License
