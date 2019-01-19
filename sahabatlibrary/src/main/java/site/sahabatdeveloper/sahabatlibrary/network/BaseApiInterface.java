@@ -24,16 +24,16 @@ public interface BaseApiInterface {
     Call<ResponseBody> POST(@Header("Authorization") String auth, @Body Object user, @Path("route") String route);
 
     @PUT("{route}")
-    Call<ResponseBody> PUT(@Body Object user, @Path("route") String route, @Query("id") String id);
+    Call<ResponseBody> PUT(@Body Object user, @Path("route") String route, @Query("id") int id);
 
     @PUT("{route}")
-    Call<ResponseBody> PUT(@Header("Authorization") String auth, @Body Object user, @Path("route") String route, @Query("id") String id);
+    Call<ResponseBody> PUT(@Header("Authorization") String auth, @Body Object user, @Path("route") String route, @Query("id") int id);
 
     @DELETE("{route}")
-    Call<ResponseBody> DELETE(@Path("route") String route, @Query("id") String id);
+    Call<ResponseBody> DELETE(@Path("route") String route, @Query("id") int id);
 
     @DELETE("{route}")
-    Call<ResponseBody> DELETE(@Header("Authorization") String auth, @Path("route") String route, @Query("id") String id);
+    Call<ResponseBody> DELETE(@Header("Authorization") String auth, @Path("route") String route, @Query("id") int id);
 
     @GET("{route}")
     Call<ResponseBody> GET(@Path("route") String route);
