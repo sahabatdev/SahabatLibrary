@@ -14,56 +14,46 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
+import site.sahabatdeveloper.sahabatlibrary.container.Communication;
+import site.sahabatdeveloper.sahabatlibrary.container.Loading;
+import site.sahabatdeveloper.sahabatlibrary.container.Prefs;
+import site.sahabatdeveloper.sahabatlibrary.container.SahabatDialog;
+import site.sahabatdeveloper.sahabatlibrary.container.UserInterface;
+import site.sahabatdeveloper.sahabatlibrary.container.Validation;
+
 /**
  * Created by sahabatdeveloper on 4/7/18.
  */
 
 public class BaseActivity extends AppCompatActivity {
-
-    ProgressDialog pDialog;
-    public DecimalFormat df= new DecimalFormat("#,##0");
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        df.setDecimalFormatSymbols(new DecimalFormatSymbols(Locale.ITALY));
-        pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Menghubungkan ke server");
-        pDialog.setCanceledOnTouchOutside(false);
     }
 
-    public void launchActivity(Class<?> kelas){
-        startActivity(new Intent(this,kelas));
+    public Communication getCommunication() {
+        return new Communication(this);
     }
 
-    public void launchActivity(Class<?> kelas, Bundle bundle){
-        Intent i = new Intent(this,kelas);
-        i.putExtras(bundle);
-        startActivity(i);
+    public Loading getLoading(String message, int style) {
+        return new Loading(this,message,style);
     }
 
-    public void showProgressDialog(){
-        pDialog.show();
+    public Prefs getPrefs() {
+        return new Prefs(this);
     }
 
-    public void hideProgressDialog(){
-        pDialog.hide();
+    public SahabatDialog getDialog() {
+        return new SahabatDialog(this);
     }
 
-    public void toastMessage(String message){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    public UserInterface getUserInterface() {
+        return new UserInterface(this);
     }
 
-    protected void replaceFragment(@IdRes int containerViewId,
-                                   @NonNull Fragment fragment,
-                                   @NonNull String fragmentTag,
-                                   @Nullable String backStackStateName) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(containerViewId, fragment, fragmentTag)
-                .addToBackStack(backStackStateName)
-                .commit();
+    public Validation getValidation() {
+        return new Validation(this);
     }
 
 }
