@@ -40,6 +40,12 @@ public class BaseActivity extends AppCompatActivity {
         return new Loading(this,message,style);
     }
 
+    public Loading getLoading() {
+        return new Loading(this);
+    }
+
+
+
     public Prefs getPrefs() {
         return new Prefs(this);
     }

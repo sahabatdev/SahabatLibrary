@@ -19,6 +19,14 @@ public class Loading {
         pDialog.setCanceledOnTouchOutside(false);
     }
 
+    public Loading(Context context) {
+        this.context = context;
+
+        pDialog = new ProgressDialog(context);
+        pDialog.setMessage("Terhubung ke Server");
+        pDialog.setCanceledOnTouchOutside(false);
+    }
+
     public void showLoadingDialog(){
         if(pDialog!=null){
             pDialog.show();
