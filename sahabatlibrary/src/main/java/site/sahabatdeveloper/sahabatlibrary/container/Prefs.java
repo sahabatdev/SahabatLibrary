@@ -9,6 +9,10 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.List;
 
+/**
+ * This is the Prefs Class is used for save data in caches activities and fragments
+ * @author by Alchemy Framework (http://alchemy.sahabatdeveloper.site/) - Politeknik Elektronika Negeri Surabaya
+ */
 public class Prefs {
     private static final String PREF_NAME = "SahabatFramework";
     private static final int PREF_MODE = 0;
@@ -16,17 +20,31 @@ public class Prefs {
     private SharedPreferences.Editor mEditor;
     private Context mContext;
 
+    /**
+     * Constructor method
+     * @param mContext for get context from activity or fragment
+     */
     public Prefs(Context mContext) {
         mContext = mContext;
         mSharedPreferences = mContext.getSharedPreferences(PREF_NAME, PREF_MODE);
     }
 
+    /**
+     * method for save data integer in cache preferences
+     * @param name for investasi
+     * @param number
+     */
     public void putInt(String name, int number){
         mEditor = mSharedPreferences.edit();
         mEditor.putInt(name, number);
         mEditor.apply();
     }
 
+    /**
+     * method for save data string in cache preferences
+     * @param name
+     * @param value
+     */
     public void putString(String name, String value){
         mEditor = mSharedPreferences.edit();
         mEditor.putString(name, value);

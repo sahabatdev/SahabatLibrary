@@ -1,5 +1,7 @@
 package site.sahabatdeveloper.sahabatlibrary.network;
 
+import java.util.Map;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -10,6 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 
 /**
  * Created by sahabatdeveloper on 4/7/18.
@@ -37,6 +40,9 @@ public interface BaseApiInterface {
 
     @GET("{route}")
     Call<ResponseBody> GET(@Path("route") String route);
+
+    @GET("{route}")
+    Call<ResponseBody> GET(@Path("route") String route, @QueryMap Map<String, String> query);
 
     @GET("{route}")
     Call<ResponseBody> GET(@Header("Authorization") String auth, @Path("route") String route);
