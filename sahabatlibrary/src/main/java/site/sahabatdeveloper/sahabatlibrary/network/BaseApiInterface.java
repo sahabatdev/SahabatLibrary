@@ -21,30 +21,30 @@ import retrofit2.http.QueryMap;
 public interface BaseApiInterface {
 
     @POST("{route}")
-    Call<ResponseBody> POST(@Body Object user, @Path("route") String route);
+    Call<ResponseBody> POST(@Body Object user, @Path(value = "route", encoded = false) String route);
 
     @POST("{route}")
-    Call<ResponseBody> POST(@Header("Authorization") String auth, @Body Object user, @Path("route") String route);
+    Call<ResponseBody> POST(@Header("Authorization") String auth, @Body Object user, @Path(value = "route", encoded = false) String route);
 
     @PUT("{route}")
-    Call<ResponseBody> PUT(@Body Object user, @Path("route") String route, @Query("id") int id);
+    Call<ResponseBody> PUT(@Body Object user, @Path(value = "route", encoded = false) String route, @Query("id") int id);
 
     @PUT("{route}")
-    Call<ResponseBody> PUT(@Header("Authorization") String auth, @Body Object user, @Path("route") String route, @Query("id") int id);
+    Call<ResponseBody> PUT(@Header("Authorization") String auth, @Body Object user, @Path(value = "route", encoded = false) String route, @Query("id") int id);
 
     @DELETE("{route}")
-    Call<ResponseBody> DELETE(@Path("route") String route, @Query("id") int id);
+    Call<ResponseBody> DELETE(@Path(value = "route", encoded = false) String route, @Query("id") int id);
 
     @DELETE("{route}")
-    Call<ResponseBody> DELETE(@Header("Authorization") String auth, @Path("route") String route, @Query("id") int id);
+    Call<ResponseBody> DELETE(@Header("Authorization") String auth, @Path(value = "route", encoded = false) String route, @Query("id") int id);
 
     @GET("{route}")
-    Call<ResponseBody> GET(@Path("route") String route);
+    Call<ResponseBody> GET(@Path(value = "route", encoded = false) String route);
 
     @GET("{route}")
-    Call<ResponseBody> GET(@Path("route") String route, @QueryMap Map<String, String> query);
+    Call<ResponseBody> GET(@Path(value = "route", encoded = false) String route, @QueryMap Map<String, String> query);
 
     @GET("{route}")
-    Call<ResponseBody> GET(@Header("Authorization") String auth, @Path("route") String route);
+    Call<ResponseBody> GET(@Header("Authorization") String auth, @Path(value = "route", encoded = false) String route);
 
 }
